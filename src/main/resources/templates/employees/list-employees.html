@@ -41,10 +41,12 @@
         Employee Directory
     </h3>
     <hr>
-    <a th:href = "@{/employees/showFormForAdd}"
-       class="btn btn-primary btn-sm mb-3">
-        Add Employee
-    </a>
+    <div sec:authorize="hasRole('MANAGER')">
+        <a th:href = "@{/employees/showFormForAdd}"
+           class="btn btn-primary btn-sm mb-3">
+            Add Employee
+        </a>
+    </div>
     <table class = "table table-bordered table-striped">
         <thead class = "table-dark">
             <tr>
